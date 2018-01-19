@@ -1,0 +1,22 @@
+<!DOCTYPE html>
+<html>
+<head>
+  <meta charset="UTF-8">
+  <title>01_HelloWorld</title>
+</head>
+<body>
+  <div id="test"></div>
+
+  <script type="text/javascript" src="../js/react.development.js"></script> <!--React核心库-->
+  <script type="text/javascript" src="../js/react-dom.development.js"></script> <!--提供操作DOM的react扩展库-->
+  <script type="text/javascript" src="../js/babel.min.js"></script> <!--解析JSX语法代码转为纯JS语法代码的库-->
+  <script type="text/babel"> /*告诉babel.js解析jsx的代码*/
+    //todo 1.创建虚拟DOM元素对象
+    var vDom = <h1>Hello</h1> //不是字符串，不用加''
+    //todo 将虚拟DOM渲染到页面真实DOM容器钟
+    ReactDOM.render(vDom,document.getElementById('test'))
+
+
+  </script>
+</body>
+</html>
