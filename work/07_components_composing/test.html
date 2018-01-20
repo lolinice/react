@@ -13,6 +13,60 @@
   <script type="text/javascript" src="../js/prop-types.js"></script>
   <script type="text/javascript" src="../js/babel.min.js"></script>
   <script type="text/babel">
+    /*
+     ## 功能界面组件化编码流程
+     - 拆分组件
+     - 跟组件 APP
+     - 上半部分-->添加组件 Add
+     - 下半部分-->列表组件 List
+     - 实现静态组件：使用组建实现静态页面效果
+     - 实现动态组件
+     - 1，动态显示初始化数据
+     - 2，交互功能(从绑定事件监听开始)
+
+     */
+
+    /*1.定义组件*/
+    class App extends React.Component{
+        render(){
+            return (
+                <div>
+                  <h1>Simple TODO List</h1>
+                  <Add />
+                  <List />
+                </div>
+
+            )
+        }
+    }
+
+    class Add extends React.Component{
+        render(){
+            return (
+                <div>
+                  <input type="text" ref={input =>this.todoInput=input}/>
+                  <button onClick={this.add}></button>
+                </div>
+            )
+        }
+    }
+
+    class List extends React.Component{
+        render(){
+            return (
+                <div>
+                    <ul>
+                      <li>1111</li>
+                      <li>2222</li>
+                      <li>3333</li>
+                    </ul>
+                </div>
+            )
+        }
+    }
+
+    /*2.渲染组件标签*/
+    ReactDOM.render(<App />,document.getElementById('example'))
 
   </script>
 </body>
