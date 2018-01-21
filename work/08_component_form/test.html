@@ -17,6 +17,22 @@
     2. 输入用户名密码后, 点击登陆提示输入信息
     3. 不提交表单
   */
+
+  //1.定义组件
+  class LoginForm extends React.Component{
+      render(){
+          return(
+                  <form action="/test" onSubmit="">
+                    用户名：<input type="text"/>
+                    密码：<input type="text"/>
+                    <input type="submit" value="登陆"/>
+                  </form>
+          )
+      }
+  }
+
+  //2.渲染组件标签
+  ReactDOM.render(<LoginForm />,document.getElementById('example'))
 </script>
 </body>
 </html>
