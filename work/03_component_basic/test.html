@@ -15,16 +15,22 @@
 
   <script type="text/babel">
     /*todo 1.定义组建*/
-    //todo 方式1：工厂函数组件(简单组建)
+    //todo 方式1：工厂函数组件(简单组建：没有状态的组件)
     function MyComponent() {
         return <h2>工厂函数组件(简单组件)</h2>
     }
 
     //todo 方式2：ES6类组件(复杂组件)
-    class MyComponent2 extends React.Component{}
+    class MyComponent2 extends React.Component{ //todo MyComponent2是组件类，this是组件实例对象，简称组件对象
+        render (){
+            console.log(this);//MyComponent2{context:{},props:{},refs:{},state,...}
+            return <h2>ES6类组件(复杂组件)</h2>
+        }
+    }
 
     /*todo 2.渲染组件标签*/
     ReactDOM.render(<MyComponent />,document.getElementById('example1'))
+    ReactDOM.render(<MyComponent2/>,document.getElementById('example2'))
   </script>
 </body>
 </html>
